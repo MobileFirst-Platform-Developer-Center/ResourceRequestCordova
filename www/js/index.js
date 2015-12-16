@@ -25,41 +25,70 @@ var wlInitOptions = {
     // For initialization options please refer to IBM MobileFirst Platform Foundation Knowledge Center.
 };
 
+var busyIndicator ;
+
 // Called automatically after MFP framework initialization by WL.Client.init(wlInitOptions).
 function wlCommonInit(){
-    busyIndicator = new WL.BusyIndicator();
-	loadFeeds();
+  busyIndicator = new WL.BusyIndicator();
+  app.loadFeeds();
 }
 
 var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
+    loadFeeds: function(){
+    	busyIndicator.show();
+
+    	/*
+    	 * The REST API works with all adapters and external resources, and is supported on the following hybrid environments:
+    	 * iOS, Android, Windows Phone 8, Windows 8.
+    	 * If your application supports other hybrid environments, see the tutorial for MobileFirst 6.3.
+    	 */
+    	var resourceRequest = new WLResourceRequest("/adapters/RSSReader/getFeedFiltered", WLResourceRequest.GET);
+    	resourceRequest.setQueryParameter("params", "['MobileFirst_Platform']");
+    	resourceRequest.send().then(
+    			app.loadFeedsSuccess,
+    			app.loadFeedsFailure
+    	);
     },
-
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+    loadFeedsSuccess: function(result){
+    	WL.Logger.debug("Feed retrieve success");
+    	busyIndicator.hide();
+    	if (result.responseJSON.Items.length>0)
+      {
+    		app.displayFeeds(result.responseJSON.Items);
+      }
+    	else
+      {
+    		app.loadFeedsFailure();
+      }
     },
-
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, 'app.receivedEvent(...);' must be explicitly called.
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+    loadFeedsFailure: function(result){
+    	WL.Logger.error("Feed retrieve failure");
+    	busyIndicator.hide();
+      navigator.notification.confirm(message, confirmCallback, [title], [buttonLabels])
+      WL.SimpleDialog.show("Engadget Reader", "Service not available. Try again later.",
+    			[{
+    				text : 'Reload',
+    				handler : WL.Client.reloadApp
+    			},
+    			{
+    				text: 'Close',
+    				handler : function() {}
+    			}]
+    		);
     },
+     displayFeeds:function(items){
+    	var ul = $('#itemsList');
+    	for (var i = 0; i < items.length; i++) {
+    		var li = $('<li/>').text(items[i].title);
+    		var pubDate = $('<div/>', {
+    			'class': 'pubDate'
+    		}).text(items[i].pubDate);
 
-    // Update the DOM on a received event.
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+    		li.append(pubDate);
+    		ul.append(li);
+    	}
     }
+
 };
 
 app.initialize();
