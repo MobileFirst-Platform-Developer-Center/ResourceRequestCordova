@@ -1,42 +1,48 @@
 <!DOCTYPE html>
-<!--
-Copyright 2015 IBM Corp.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Resource Requesting</title>
-    </head>
-    <body>
-        <div id="header">
-			       <h1>RSS Reader</h1>
-		    </div>
+  <head>
+  	<!--
+	  Customize this policy to fit your own app's needs. For more guidance, see:
+	      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+	  Some notes:
+	      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+	      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+	      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+	          * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
 
-        <div id="wrapper">
-            <ul id="itemsList"></ul>
-        </div>
+	<!-- Uncomment the following line if you are migrating an app from Legacy to MFP Cordova -->
+    <!--  <link rel="stylesheet" type="text/css" href="plugins/cordova-plugin-mfp/worklight/worklight.css" > -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
 
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+    <!-- load script with wlCommonInit defined before loading cordova.js -->
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <title>Hello World</title>
+  </head>
+  <body>
+    <div id="form">
+        First Name<br />
+        <input type="text" id="first" value="John"></input><br />
+        Second Name<br />
+        <input type="text" id="second" value="M"></input><br />
+        Third Name<br />
+        <input type="text" id="third" value="Smith"></input><br />
+        Age<br />
+        <input type="text" id="age" value="42"></input><br />
+        Date<br />
+        <input type="text" id="date" value="1974-05-05"></input><br />
+        Height<br />
+        <input type="text" id="height" value="175"></input><br />
+        <input type="button" id="btn_submit" value="Submit"></input><br />
+    </div>
+    <div id="result">
+    </div>
+  </body>
 </html>

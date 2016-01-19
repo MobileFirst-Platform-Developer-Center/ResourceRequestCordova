@@ -1,13 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.mfp.resourcerequesting" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:mfp="http://www.ibm.com/mobilefirst/cordova-plugin-mfp">
-    <name>Resource Requests</name>
+<widget id="com.sample.resourcerequest" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:mfp="http://www.ibm.com/mobilefirst/cordova-plugin-mfp">
+    <name>ResourceRequestCordova</name>
     <description>
-        A sample Apache Cordova application demonstrating resource requests using adapters in MobileFirst Platform Foundation.
+        A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="" href="https://mobilefirstplatform.ibmcloud.com">
-        IBM MobileFirst Platform Foundation team
+    <author email="mobileb@us.ibm.com" href="https://developer.ibm.com/mobilefirstplatform/documentation/getting-started">
+        IBM MobileFirst Team
     </author>
     <content src="index.html" />
+    <plugin name="cordova-plugin-mfp" spec="~8.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="~3" />
+    <plugin name="cordova-plugin-whitelist" spec="~1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -70,15 +73,16 @@
         <splash height="1242" src="res/screen/ios/Default-736h-Landscape~iphone.png" width="2208" />
     </platform>
     <mfp:android>
-        <mfp:sdkChecksum>1761333341</mfp:sdkChecksum>
+        <mfp:sdkChecksum>2556909597</mfp:sdkChecksum>
         <mfp:appChecksum>0</mfp:appChecksum>
         <mfp:security>
             <mfp:encryptWebResources enabled="false" />
             <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
         </mfp:security>
+        <mfp:publicSigningKey />
     </mfp:android>
     <mfp:ios>
-        <mfp:sdkChecksum>2063345269</mfp:sdkChecksum>
+        <mfp:sdkChecksum>0</mfp:sdkChecksum>
         <mfp:appChecksum>0</mfp:appChecksum>
         <mfp:security>
             <mfp:encryptWebResources enabled="false" />
@@ -86,20 +90,35 @@
         </mfp:security>
     </mfp:ios>
     <mfp:windows>
-        <mfp:sdkChecksum>0</mfp:sdkChecksum>
+        <mfp:windows8>
+            <mfp:sdkChecksum>0</mfp:sdkChecksum>
+            <mfp:security>
+                <mfp:encryptWebResources enabled="false" />
+                <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
+            </mfp:security>
+            <mfp:packageFamilyName />
+        </mfp:windows8>
+        <mfp:windowsphone8>
+            <mfp:sdkChecksum>0</mfp:sdkChecksum>
+            <mfp:security>
+                <mfp:encryptWebResources enabled="false" />
+                <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
+            </mfp:security>
+            <mfp:packageFamilyName />
+        </mfp:windowsphone8>
+        <mfp:windows10>
+            <mfp:sdkChecksum>0</mfp:sdkChecksum>
+            <mfp:security>
+                <mfp:encryptWebResources enabled="false" />
+                <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
+            </mfp:security>
+            <mfp:packageFamilyName />
+        </mfp:windows10>
         <mfp:appChecksum>0</mfp:appChecksum>
-        <mfp:security>
-            <mfp:encryptWebResources enabled="false" />
-            <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
-        </mfp:security>
     </mfp:windows>
-    <mfp:platformVersion>8.0.0.00-20151216-1841</mfp:platformVersion>
+    <mfp:platformVersion>8.0.0.00-20160119-1633</mfp:platformVersion>
     <mfp:clientCustomInit enabled="false" />
-    <mfp:server runtime="mfp" url="http://mfp80dev.rtp.raleigh.ibm.com:9080" />
+    <mfp:server runtime="mfp" url="http://10.0.0.1:9080" />
     <mfp:directUpdateAuthenticityPublicKey />
     <mfp:languagePreferences>en</mfp:languagePreferences>
-    <engine name="ios" spec="https://github.com/apache/cordova-ios.git#master" />
-    <engine name="android" spec="~4.1.1" />
-    <engine name="windows" spec="~4.2.0" />
-    <plugin name="cordova-plugin-mfp" spec="~8.0" />
 </widget>
