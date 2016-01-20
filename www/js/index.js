@@ -31,14 +31,15 @@ var app = {
     submitRequest:function(){
       WL.Logger.info("at app.submitRequest");
       var first = document.getElementById("first").value;
-      var second = document.getElementById("second").value;
-      var third = document.getElementById("third").value;
+      var middle = document.getElementById("middle").value;
+      var last = document.getElementById("last").value;
       var age = document.getElementById("age").value;
       var date = document.getElementById("date").value;
       var height = document.getElementById("height").value;
 
-      var url = "/adapters/JavaAdapter/users/"+first+"/"+second+"/"+third;
-      var resourceRequest = new WLResourceRequest(url, WLResourceRequest.POST);
+      var url = "/adapters/JavaAdapter/users/"+first+"/"+middle+"/"+last;
+      var resourceRequest = new WLResourceRequest(url, WLResourceRequest.GET);
+    //  var resourceRequest = new WLResourceRequest(url, WLResourceRequest.POST);
 
       resourceRequest.setQueryParameter("age", age);
       resourceRequest.setHeader("date",date);
@@ -49,20 +50,36 @@ var app = {
       resourceRequest.sendFormParameters(formParameters).then(
           app.onSuccess,
           app.onFailure);
+      SpinnerDialog.show();
+
+
     },
     onSuccess: function(response){
       WL.Logger.info("at onSuccess");
-      app.showResult("Success " + JSON.stringify(response.responseJSON));
+      WL.Logger.info(response.responseText);
+      SpinnerDialog.hide();
+      var resultText = ""
+               resultText += "Name = "
+               resultText += response.responseJSON["first"] + " " + response.responseJSON["middle"] + " " + response.responseJSON["last"] + "<br>"
+               resultText += "Age = " + response.responseJSON["age"] + "<br>"
+               resultText += "Height = " + response.responseJSON["height"] + "<br>"
+               resultText += "Date = " + response.responseJSON["Date"] + "<br>"
+
+      app.showResult(resultText);
     },
     onFailure: function(response){
       WL.Logger.info("at onFailure");
-      app.showResult("Error " + JSON.stringify(response.responseJSON));
+      WL.Logger.info(response.responseText);
+      WL.Logger.info(JSON.stringify(response));
+      SpinnerDialog.hide();
+      app.showResult("Error /n" + response);
     },
     showResult:function(content){
       var span = document.getElementById('span_result');
       while( span.firstChild ) {
         span.removeChild( span.firstChild );
       }
-      span.appendChild( document.createTextNode(content) );
+      //span.appendChild( document.createTextNode(content) );
+      span.appendChild(content );
     }
 };
