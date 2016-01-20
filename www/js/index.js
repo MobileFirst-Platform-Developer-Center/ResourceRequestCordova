@@ -72,14 +72,14 @@ var app = {
       WL.Logger.info(response.responseText);
       WL.Logger.info(JSON.stringify(response));
       SpinnerDialog.hide();
-      app.showResult("Error /n" + response);
+      app.showResult("Error:" + JSON.stringify(response));
     },
     showResult:function(content){
       var span = document.getElementById('span_result');
       while( span.firstChild ) {
         span.removeChild( span.firstChild );
       }
-      //span.appendChild( document.createTextNode(content) );
-      span.appendChild(content );
+      span.appendChild( document.createTextNode(content) );
+
     }
 };

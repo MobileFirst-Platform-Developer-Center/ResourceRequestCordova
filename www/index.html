@@ -19,31 +19,56 @@
 	<!-- Uncomment the following line if you are migrating an app from Legacy to MFP Cordova -->
     <!--  <link rel="stylesheet" type="text/css" href="plugins/cordova-plugin-mfp/worklight/worklight.css" > -->
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 
     <!-- load script with wlCommonInit defined before loading cordova.js -->
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
 
-    <title>Hello World</title>
+
+
+    <title>ResourceRequestCordova</title>
   </head>
   <body>
-    <div id="form">
-        First Name<br />
-        <input type="text" id="first" value="John"></input><br />
-        Middle Name<br />
-        <input type="text" id="middle" value="M"></input><br />
-        Last Name<br />
-        <input type="text" id="last" value="Smith"></input><br />
-        Age<br />
-        <input type="text" id="age" value="42"></input><br />
-        Date<br />
-        <input type="text" id="date" value="1974-05-05"></input><br />
-        Height<br />
-        <input type="text" id="height" value="175"></input><br />
-        <input type="button" id="btn_submit" value="Submit"></input><br />
+    <div data-role="page">
+    	<div role="main" class="ui-content">
+        <form id="form">
+            <div class="ui-field-contain">
+              <label for="first">First Name:</label>
+              <input data-mini="true" type="text" id="first" value="John"></input>
+            </div>
+            <div class="ui-field-contain">
+              <label for="middle">Middle Name:</label>
+              <input data-mini="true" type="text" id="middle" value="M"></input>
+            </div>
+            <div class="ui-field-contain">
+              <label for="last">Last Name:</label>
+              <input data-mini="true" type="text" id="last" value="Smith"></input>
+            </div>
+            <div class="ui-field-contain">
+              <label for="age">Age:</label>
+              <input data-mini="true" type="text" id="age" value="42"></input>
+            </div>
+            <div class="ui-field-contain">
+              <label for="date">Date:</label>
+              <input data-mini="true" type="text" id="date" value="1974-05-05"></input>
+            </div>
+            <div class="ui-field-contain">
+              <label for="height">Height:</label>
+              <input data-mini="true" type="text" id="height" value="175"></input>
+            </div>
+            <input type="button" id="btn_submit" value="Submit"></input>
+        </form>
+        <div id="result">
+            <span id="span_result">Result will be presented here</span>
+        </div>
+      </div>
     </div>
-    <div id="result">
-        <span id="span_result"></span>
-    </div>
+
+
+
   </body>
 </html>
