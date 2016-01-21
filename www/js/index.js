@@ -20,9 +20,8 @@ var app = {
     // Application Constructor
     initialize: function() {
       WL.Logger.info("at app.initialize");
-        this.bindEvents();
+      this.bindEvents();
     },
-
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
@@ -38,8 +37,7 @@ var app = {
       var height = document.getElementById("height").value;
 
       var url = "/adapters/JavaAdapter/users/"+first+"/"+middle+"/"+last;
-      var resourceRequest = new WLResourceRequest(url, WLResourceRequest.GET);
-    //  var resourceRequest = new WLResourceRequest(url, WLResourceRequest.POST);
+      var resourceRequest = new WLResourceRequest(url, WLResourceRequest.POST);
 
       resourceRequest.setQueryParameter("age", age);
       resourceRequest.setHeader("date",date);
@@ -48,11 +46,9 @@ var app = {
       formParameters.height=height;
       WL.Logger.info("at app.submitRequest - sendFormParameters");
       resourceRequest.sendFormParameters(formParameters).then(
-          app.onSuccess,
-          app.onFailure);
+         app.onSuccess,
+         app.onFailure);
       SpinnerDialog.show();
-
-
     },
     onSuccess: function(response){
       WL.Logger.info("at onSuccess");
@@ -60,26 +56,17 @@ var app = {
       SpinnerDialog.hide();
       var resultText = ""
                resultText += "Name = "
-               resultText += response.responseJSON["first"] + " " + response.responseJSON["middle"] + " " + response.responseJSON["last"] + "<br>"
-               resultText += "Age = " + response.responseJSON["age"] + "<br>"
-               resultText += "Height = " + response.responseJSON["height"] + "<br>"
-               resultText += "Date = " + response.responseJSON["Date"] + "<br>"
+               resultText += response.responseJSON["first"] + " " + response.responseJSON["middle"] + " " + response.responseJSON["last"] + "\n"
+               resultText += "Age = " + response.responseJSON["age"] + "\n"
+               resultText += "Height = " + response.responseJSON["height"] + "\n"
+               resultText += "Date = " + response.responseJSON["date"] + "\n"
 
-      app.showResult(resultText);
+      navigator.notification.alert(resultText, function(){}, "Success");
     },
     onFailure: function(response){
       WL.Logger.info("at onFailure");
-      WL.Logger.info(response.responseText);
       WL.Logger.info(JSON.stringify(response));
       SpinnerDialog.hide();
-      app.showResult("Error:" + JSON.stringify(response));
-    },
-    showResult:function(content){
-      var span = document.getElementById('span_result');
-      while( span.firstChild ) {
-        span.removeChild( span.firstChild );
-      }
-      span.appendChild( document.createTextNode(content) );
-
+      navigator.notification.alert(JSON.stringify(response), function(){}, "Fail");
     }
 };
