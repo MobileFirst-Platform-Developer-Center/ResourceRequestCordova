@@ -35,13 +35,14 @@ var app = {
       var age = document.getElementById("age").value;
       var date = document.getElementById("date").value;
       var height = document.getElementById("height").value;
-
+      //JavaAdapter expects first, middle and last  to be part of the POST URL path
       var url = "/adapters/JavaAdapter/users/"+first+"/"+middle+"/"+last;
       var resourceRequest = new WLResourceRequest(url, WLResourceRequest.POST);
-
+      //JavaAdapter expects age to be a query parameter
       resourceRequest.setQueryParameter("age", age);
+      //JavaAdapter expects date to be a header parameter
       resourceRequest.setHeader("date",date);
-
+      //JavaAdapter expects height to be a form parameter
       var formParameters ={};
       formParameters.height=height;
       WL.Logger.info("at app.submitRequest - sendFormParameters");
