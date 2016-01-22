@@ -49,7 +49,7 @@ var app = {
       resourceRequest.sendFormParameters(formParameters).then(
          app.onSuccess,
          app.onFailure);
-      SpinnerDialog.show();
+      SpinnerDialog.show(null,null,function(){/*no callback - force the use of SpinnerDialog.hide() */ });
     },
     onSuccess: function(response){
       WL.Logger.info("at onSuccess");

@@ -2,7 +2,7 @@
 <widget id="com.sample.resourcerequest" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:mfp="http://www.ibm.com/mobilefirst/cordova-plugin-mfp">
     <name>ResourceRequestCordova</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A sample Apache Cordova application that does a resource request to an adapter and presents the results.
     </description>
     <author email="mobileb@us.ibm.com" href="https://developer.ibm.com/mobilefirstplatform/documentation/getting-started">
         IBM MobileFirst Team
