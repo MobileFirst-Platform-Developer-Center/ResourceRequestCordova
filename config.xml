@@ -115,12 +115,12 @@
     </mfp:windows>
     <mfp:platformVersion>8.0.0.00-20160119-1633</mfp:platformVersion>
     <mfp:clientCustomInit enabled="false" />
-    <mfp:server runtime="mfp" url="http://9.86.218.21:9080" />
+    <mfp:server runtime="mfp" url="http://localhost:9080" />
     <mfp:directUpdateAuthenticityPublicKey />
     <mfp:languagePreferences>en</mfp:languagePreferences>
     <plugin name="cordova-plugin-mfp" spec="~8.0" />
     <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />
     <plugin name="cordova-plugin-splashscreen" spec="~3" />
     <plugin name="cordova-plugin-whitelist" spec="~1" />
-    <plugin name="com.filfatstudios.spinnerdialog" spec="https://github.com/filfat-Studios-AB/cordova-plugin-spinnerdialog" />
+    <plugin name="com.filfatstudios.spinnerdialog" spec="~1.0.2" />
 </widget>
