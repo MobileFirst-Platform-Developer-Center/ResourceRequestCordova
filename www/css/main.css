@@ -20,28 +20,9 @@ body {
 	background-color: #ccc;
 }
 
-h1 {
-	margin: 0;
-	font-size: 18px;
-	font-family: inherit;
-}
-
-form {
-    width: 100%;
-    margin: 0 auto;
-}
-
-label, input {
-    display: inline-block;
-}
-
-label {
-    width: 45%;
-    text-align: right;
-}
-
-label + input {
-    width: 50%;
+#wrapper {
+	margin: auto;
+	padding-top: 38px;
 }
 
 #header {
@@ -56,28 +37,33 @@ label + input {
 	width: 100%;
 }
 
-#wrapper {
-	margin: auto;
-	padding-top: 38px;
+h1 {
+	margin: 0;
+	font-size: 18px;
+	font-family: inherit;
+}
+
+form {
+    width: 100%;
+	margin-top: 5px;
+}
+
+label, input {
+    display: inline-block;
+	margin: 0 0 5px 5px;
+}
+
+label {
+    width: 100%;
+	margin: 0 0 5px 5px;
+}
+
+label + input {
+    width: 50%;
 }
 
 .submit {
-	width: 100%;
+	width: 30%;
 	height: 3em;
-	font-size: 0.8em;
-	margin: 0.5em 0 0.2em 0;
 	background-color: #eee;
-}
-
-/* Provide different styling for iOS 7. */
-body.wl_ios7 {
-	padding-top: 0 !important;
-}
-
-.wl_ios7 #header {
-	padding-top: 9px;
-}
-
-.wl_ios7 #wrapper {
-	padding-top: 55px;
 }
