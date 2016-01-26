@@ -1,0 +1,83 @@
+/**
+* Copyright 2015 IBM Corp.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	background-color: #ccc;
+}
+
+h1 {
+	margin: 0;
+	font-size: 18px;
+	font-family: inherit;
+}
+
+form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+label, input {
+    display: inline-block;
+}
+
+label {
+    width: 45%;
+    text-align: right;
+}
+
+label + input {
+    width: 50%;
+}
+
+#header {
+	text-align: center;
+	background-color: #1D4D90;
+	color: #F9FAFB;
+	font-size: 16px;
+	height: 38px;
+	line-height: 38px;
+	border-bottom: 1px solid white;
+	position: fixed;
+	width: 100%;
+}
+
+#wrapper {
+	margin: auto;
+	padding-top: 38px;
+}
+
+.submit {
+	width: 100%;
+	height: 3em;
+	font-size: 0.8em;
+	margin: 0.5em 0 0.2em 0;
+	background-color: #eee;
+}
+
+/* Provide different styling for iOS 7. */
+body.wl_ios7 {
+	padding-top: 0 !important;
+}
+
+.wl_ios7 #header {
+	padding-top: 9px;
+}
+
+.wl_ios7 #wrapper {
+	padding-top: 55px;
+}
