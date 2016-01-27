@@ -29,7 +29,6 @@ body {
 	text-align: center;
 	background-color: #1D4D90;
 	color: #F9FAFB;
-	font-size: 16px;
 	height: 38px;
 	line-height: 38px;
 	border-bottom: 1px solid white;
@@ -44,22 +43,16 @@ h1 {
 }
 
 form {
-    width: 100%;
-	margin-top: 5px;
+    margin: 5px 12px 5px 5px;
 }
 
-label, input {
+input {
     display: inline-block;
-	margin: 0 0 5px 5px;
-}
-
-label {
-    width: 100%;
-	margin: 0 0 5px 5px;
-}
-
-label + input {
-    width: 50%;
+	margin-bottom: 5px;
+    padding-left: 5px;
+	font-size: 90%;
+	height: 26px;
+	width: 99%;
 }
 
 .submit {
