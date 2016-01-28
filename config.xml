@@ -15,6 +15,11 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <plugin name="cordova-plugin-mfp" spec="~8.0" />
+    <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="~3" />
+    <plugin name="cordova-plugin-whitelist" spec="~1" />
+    <plugin name="com.filfatstudios.spinnerdialog" spec="~1.0.2" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon src="res/icon/android/icon-96-xhdpi.png" />
@@ -118,9 +123,4 @@
     <mfp:server runtime="mfp" url="http://localhost:9080" />
     <mfp:directUpdateAuthenticityPublicKey />
     <mfp:languagePreferences>en</mfp:languagePreferences>
-    <plugin name="cordova-plugin-mfp" spec="~8.0" />
-    <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />
-    <plugin name="cordova-plugin-splashscreen" spec="~3" />
-    <plugin name="cordova-plugin-whitelist" spec="~1" />
-    <plugin name="com.filfatstudios.spinnerdialog" spec="~1.0.2" />
 </widget>
