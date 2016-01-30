@@ -4,7 +4,7 @@
     <description>
         A sample Apache Cordova application that does a resource request to an adapter and presents the results.
     </description>
-    <author email="mobileb@us.ibm.com" href="https://developer.ibm.com/mobilefirstplatform/documentation/getting-started">
+    <author email="" href="https://mobilefirstplatform.ibmcloud.com">
         IBM MobileFirst Team
     </author>
     <content src="index.html" />
@@ -75,7 +75,7 @@
         <splash height="1242" src="res/screen/ios/Default-736h-Landscape~iphone.png" width="2208" />
     </platform>
     <mfp:android>
-        <mfp:sdkChecksum>1144504935</mfp:sdkChecksum>
+        <mfp:sdkChecksum>1550643090</mfp:sdkChecksum>
         <mfp:appChecksum>0</mfp:appChecksum>
         <mfp:security>
             <mfp:encryptWebResources enabled="false" />
@@ -84,7 +84,7 @@
         <mfp:publicSigningKey />
     </mfp:android>
     <mfp:ios>
-        <mfp:sdkChecksum>2929669382</mfp:sdkChecksum>
+        <mfp:sdkChecksum>977682380</mfp:sdkChecksum>
         <mfp:appChecksum>0</mfp:appChecksum>
         <mfp:security>
             <mfp:encryptWebResources enabled="false" />
@@ -118,7 +118,7 @@
         </mfp:windows10>
         <mfp:appChecksum>0</mfp:appChecksum>
     </mfp:windows>
-    <mfp:platformVersion>8.0.0.00-20160121-1942</mfp:platformVersion>
+    <mfp:platformVersion>8.0.0.00-20160129-2046</mfp:platformVersion>
     <mfp:clientCustomInit enabled="false" />
     <mfp:server runtime="mfp" url="http://localhost:9080" />
     <mfp:directUpdateAuthenticityPublicKey />
