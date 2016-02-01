@@ -25,7 +25,7 @@ var app = {
     bindEvents: function() {
         document.getElementById("btn_submit").addEventListener('click', app.submitRequest);
     },
-    
+
     submitRequest:function() {
         var first = document.getElementById("first").value;
         var middle = document.getElementById("middle").value;
@@ -51,23 +51,27 @@ var app = {
         resourceRequest.sendFormParameters(formParameters).then(app.onSuccess, app.onFailure);
         SpinnerDialog.show(null,null,function(){/*no callback - force the use of SpinnerDialog.hide() */ });
     },
-    
+
     onSuccess: function(response) {
         WL.Logger.info("Success: " + response.responseText);
         SpinnerDialog.hide();
-    
+
         var resultText = "";
         resultText += "Name = ";
         resultText += response.responseJSON.first + " " + response.responseJSON.middle + " " + response.responseJSON.last + "\n";
         resultText += "Age = " + response.responseJSON.age + "\n";
         resultText += "Height = " + response.responseJSON.height + "\n";
         resultText += "Date = " + response.responseJSON.date + "\n";
+
+        navigator.notification.alert(resultText, function(){}, "Success");
     },
-    
+
     onFailure: function(response) {
         WL.Logger.info("Failure: " + response.errorMsg);
         SpinnerDialog.hide();
         
         var resultText = response.errorMsg;
+
+        navigator.notification.alert(resultText, function(){}, "Fail");
     }
 };
