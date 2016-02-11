@@ -1,6 +1,6 @@
 IBM MobileFirst Platform Foundation
 ===
-### ResourceRequestCordova
+## ResourceRequestCordova
 
 ### Tutorials
 https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-mfpf-sdk/resource-request-in-cordova-applications/
