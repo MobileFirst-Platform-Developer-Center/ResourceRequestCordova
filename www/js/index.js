@@ -56,22 +56,23 @@ var app = {
         WL.Logger.info("Success: " + response.responseText);
         SpinnerDialog.hide();
 
-        var resultText = "";
-        resultText += "Name = ";
-        resultText += response.responseJSON.first + " " + response.responseJSON.middle + " " + response.responseJSON.last + "\n";
-        resultText += "Age = " + response.responseJSON.age + "\n";
-        resultText += "Height = " + response.responseJSON.height + "\n";
-        resultText += "Date = " + response.responseJSON.date + "\n";
+        var resultText = "Success"+ "<br>";
+        resultText += "Name: ";
+        resultText += response.responseJSON.first + " " + response.responseJSON.middle + " " + response.responseJSON.last + "<br>";
+        resultText += "Age: " + response.responseJSON.age + "<br>";
+        resultText += "Height: " + response.responseJSON.height + "<br>";
+        resultText += "Date: " + response.responseJSON.Date + "<br>";
 
-        navigator.notification.alert(resultText, function(){}, "Success");
+        document.getElementById("div_result").innerHTML= resultText;
     },
 
     onFailure: function(response) {
-        WL.Logger.info("Failure: " + response.errorMsg);
-        SpinnerDialog.hide();
-        
-        var resultText = response.errorMsg;
 
-        navigator.notification.alert(resultText, function(){}, "Fail");
+        WL.Logger.info("Failure: " + JSON.stringify(response));
+        SpinnerDialog.hide();
+
+        var resultText = "FAIL<br>"+response.errorMsg;
+
+        document.getElementById("div_result").innerHTML= resultText;
     }
 };
