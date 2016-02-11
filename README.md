@@ -1,6 +1,7 @@
 IBM MobileFirst Platform Foundation
 ===
 ## ResourceRequestCordova
+A sample application demonstrating the use to the WLResourceRequest API in JavaScript.
 
 ### Tutorials
 https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-mfpf-sdk/resource-request-in-cordova-applications/
