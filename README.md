@@ -12,6 +12,8 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-m
 2. Add a platform by running the `cordova platform add` command.
 3. Run the Cordova application by running the `cordova run` command.
 
+Resource Request adapter: https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80
+
 ### Supported Levels
 IBM MobileFirst Platform Foundation 8.0
 
