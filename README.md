@@ -3,7 +3,7 @@ IBM MobileFirst Platform Foundation
 ### ResourceRequestCordova
 
 ### Tutorials
-https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-mfpf-sdk/jsonstore-cordova/
+https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-mfpf-sdk/resource-request-in-cordova-applications/
 
 ### Usage
 
