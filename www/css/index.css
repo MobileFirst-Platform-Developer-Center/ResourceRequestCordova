@@ -1,84 +1,63 @@
+/**
+* Copyright 2015 IBM Corp.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
 body {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: auto;
-}
-body, p, div{
-  margin: 0;
-}
-p {
-  padding-right: 5px;
+	margin: 0;
+	font-family: sans-serif;
+	background-color: #ccc;
 }
 
-.statusblock {
-  position: fixed;
-  bottom: 10%;
-  right: 7%;
-  float: right;
-  clear: both;
-  height: 60px;
-  width: 160px;
+#wrapper {
+	margin: auto;
+	padding-top: 38px;
 }
 
-.version_label {
-  font-weight: bold;
-  background-color:#FFFFFF;
-}
-#app_version {
-  padding-left: 2px;
-}
-
-#mobilefirst {
-  display:none;
-  width: 160px;
-}
-
-.mobilefirst_label {
-  text-transform: none;
-  background-color:#00B2EF;
-  color:#FFFFFF;
-  margin-bottom: 20px;
-  margin-top: 2px;
+#header {
+	text-align: center;
+	background-color: #1D4D90;
+	color: #F9FAFB;
+	height: 38px;
+	line-height: 38px;
+	border-bottom: 1px solid white;
+	position: fixed;
+	width: 100%;
+	padding-top: 5px;
 }
 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-    -moz-animation:fade 3000ms infinite;
-}
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-.event {
-    color:#FFFFFF;
-}
-.listening {
-    background-color:#333333;
-    display:block;
-}
-.received {
-    background-color:#4B946A;
-    display:none;
+h1 {
+	margin: 0;
+	font-size: 18px;
+	font-family: inherit;
 }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-  body {
-    background: url(../img/bg-landscape.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    max-height: 400px;
-  }
+form {
+    margin: 5px 12px 5px 5px;
+}
+
+input {
+    display: inline-block;
+	margin-bottom: 5px;
+    padding-left: 5px;
+	font-size: 90%;
+	height: 26px;
+	width: 99%;
+}
+
+.submit {
+	width: 30%;
+	height: 3em;
+	background-color: #eee;
 }
