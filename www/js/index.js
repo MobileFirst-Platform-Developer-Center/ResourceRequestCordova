@@ -56,7 +56,7 @@ var app = {
         WL.Logger.info("Success: " + response.responseText);
         SpinnerDialog.hide();
 
-        var resultText = "Success"+ "<br>";
+        var resultText = "Success: " + "<br>";
         resultText += "Name: ";
         resultText += response.responseJSON.first + " " + response.responseJSON.middle + " " + response.responseJSON.last + "<br>";
         resultText += "Age: " + response.responseJSON.age + "<br>";
@@ -71,8 +71,8 @@ var app = {
         WL.Logger.info("Failure: " + JSON.stringify(response));
         SpinnerDialog.hide();
 
-        var resultText = "FAIL<br>"+response.errorMsg;
+        var resultText = "Failure: " + response.errorMsg;
 
-        document.getElementById("div_result").innerHTML= resultText;
+        document.getElementById("div_result").innerHTML = resultText;
     }
 };
