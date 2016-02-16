@@ -31,7 +31,7 @@ var app = {
         var middle = document.getElementById("middle").value;
         var last = document.getElementById("last").value;
         var age = document.getElementById("age").value;
-        var date = document.getElementById("date").value;
+        var birthdate = document.getElementById("birthdate").value;
         var height = document.getElementById("height").value;
 
         //JavaAdapter expects first, middle and last to be part of the POST URL path.
@@ -41,8 +41,8 @@ var app = {
         //JavaAdapter expects age to be a query parameter.
         resourceRequest.setQueryParameter("age", age);
 
-        //JavaAdapter expects date to be a header parameter.
-        resourceRequest.setHeader("date",date);
+        //JavaAdapter expects birthdate to be a header parameter.
+        resourceRequest.setHeader("birthdate",birthdate);
 
         //JavaAdapter expects height to be a form parameter.
         var formParameters = {};
@@ -61,7 +61,7 @@ var app = {
         resultText += response.responseJSON.first + " " + response.responseJSON.middle + " " + response.responseJSON.last + "<br>";
         resultText += "Age: " + response.responseJSON.age + "<br>";
         resultText += "Height: " + response.responseJSON.height + "<br>";
-        resultText += "Date: " + response.responseJSON.Date + "<br>";
+        resultText += "Birthdate: " + response.responseJSON.birthdate + "<br>";
 
         document.getElementById("div_result").innerHTML= resultText;
     },

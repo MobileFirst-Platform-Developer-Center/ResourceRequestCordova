@@ -15,14 +15,17 @@
 */
 
 body {
+	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
 	margin: 0;
 	font-family: sans-serif;
 	background-color: #ccc;
 }
 
 #wrapper {
-	margin: auto;
-	padding-top: 38px;
+	margin-left: 8px;
+	padding-top: 50px;
+	width: 94%;
 }
 
 #header {
@@ -41,10 +44,6 @@ h1 {
 	margin: 0;
 	font-size: 18px;
 	font-family: inherit;
-}
-
-form {
-    margin: 5px 12px 5px 5px;
 }
 
 input {
