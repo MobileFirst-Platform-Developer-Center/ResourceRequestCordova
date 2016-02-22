@@ -71,7 +71,7 @@ var app = {
         WL.Logger.info("Failure: " + JSON.stringify(response));
         SpinnerDialog.hide();
 
-        var resultText = "Failure: " + response.errorMsg;
+        var resultText = "Failure: " + JSON.stringify(response);
 
         document.getElementById("div_result").innerHTML = resultText;
     }
