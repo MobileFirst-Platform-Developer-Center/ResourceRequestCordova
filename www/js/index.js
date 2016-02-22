@@ -49,12 +49,12 @@ var app = {
         formParameters.height = height;
 
         resourceRequest.sendFormParameters(formParameters).then(app.onSuccess, app.onFailure);
-        SpinnerDialog.show(null,null,function(){/*no callback - force the use of SpinnerDialog.hide() */ });
+        window.plugins.spinnerDialog.show(null,null,function(){/*no callback - force the use of SpinnerDialog.hide() */ });
     },
 
     onSuccess: function(response) {
         WL.Logger.info("Success: " + response.responseText);
-        SpinnerDialog.hide();
+        window.plugins.spinnerDialog.hide();
 
         var resultText = "Success: " + "<br>";
         resultText += "Name: ";
