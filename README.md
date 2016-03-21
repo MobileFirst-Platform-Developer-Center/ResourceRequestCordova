@@ -8,9 +8,10 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-m
 
 ### Usage
 
-This sample uses the adapter **JavaAdapter** found in: https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80
+1. Use either Maven or MobileFirst Developer CLI to build and deploy the `JavaAdapter` adapter.
 
-1. Use either Maven or MobileFirst Developer CLI to [build and deploy the adapter](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters/).
+  The `JavaAdapter` adapter can be found in https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80.
+
 2. From the command-line, navigate to the project's root folder.
 3. Add a platform by running the `cordova platform add` command.
 4. Register the application by running `mfpdev app register`.
