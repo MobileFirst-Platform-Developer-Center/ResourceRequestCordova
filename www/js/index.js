@@ -85,7 +85,7 @@ var app = {
     onFailure: function(response) {
 
         WL.Logger.info("Failure: " + JSON.stringify(response));
-        SpinnerDialog.hide();
+        window.plugins.spinnerDialog.hide();
 
         var resultText = "Failure: " + JSON.stringify(response);
 
