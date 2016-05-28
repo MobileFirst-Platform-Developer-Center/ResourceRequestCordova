@@ -8,7 +8,7 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-m
 
 ### Usage
 
-1. Use either Maven or MobileFirst Developer CLI to build and deploy the `JavaAdapter` adapter.
+1. Use either Maven, MobileFirst CLI or your IDE of choice to build and deploy the `JavaAdapter` adapter.
 
   The `JavaAdapter` adapter can be found in https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80.
 
